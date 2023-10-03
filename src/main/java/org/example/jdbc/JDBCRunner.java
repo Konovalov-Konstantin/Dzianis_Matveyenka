@@ -1,7 +1,6 @@
-package org.example;
+package org.example.jdbc;
 
 import java.sql.*;
-import java.util.Random;
 
 public class JDBCRunner {
 
