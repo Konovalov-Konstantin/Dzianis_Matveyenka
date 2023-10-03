@@ -1,0 +1,79 @@
+сделать комментарий - ctrl+/
+типы данны в posgreSQL - https://postgrespro.ru/docs/postgresql/13/datatype
+
+********    DDL - команды для создания, измения, удаления таблиц, схем     ***************
+    CREATE DATABASE company_repository;
+    CREATE SCHEMA company_storage;
+    DROP SCHEMA company_storage;
+
+
+********    DML - команды для добавления, удаления, изменения данных в таблицах     ***************
+
+********    Ограничения (constraints)     ***************
+    NOT NULL - поле не может быть пустым
+    UNIQUE - значние в колонке должно быть уникальным
+    CHECK () - в скобках задается условие
+    PRIMARY KEY - первичный ключ
+    FOREIGN KEY - внешний ключ
+
+    CREATE TABLE company
+    (
+        id   INT PRIMARY KEY,  -- должно быть уникальное и не пустое
+        name VARCHAR(8) UNIQUE NOT NULL,  -- максимальный размер символов (8), уникальное и не пустое
+        date DATE CHECK ( date > '1995-01-01' AND date < '2030-01-01' ) -- также есть типы TIME - время, TIMESTAMP - дата + время
+    );
+
+    CREATE TABLE employee
+    (
+        id         SERIAL PRIMARY KEY, -- SERIAL -автоинкрементируемый тип (счетчик)
+        first_name VARCHAR(128),
+        last_name  VARCHAR(128),
+        salary     INT,
+        company_id INT NOT NULL REFERENCES company(id) ON DELETE CASCADE,     -- FOREIGN KEY, при удалении company все ее employee также удалятся (CASCADE)
+        UNIQUE (first_name, last_name) -- совокупность полей first_name и last_name должна быть уникальной
+    );
+
+    INSERT INTO employee (first_name, last_name, salary)    -- т.к. поле id типа SERIAL, его не нужно передавать в VALUES
+    VALUES ('Ivan', 'Ivanov', 1000),
+           ('Petr', 'Petrov', 1500),
+           ('Sveta', 'Bobunec', 2000);
+
+    SELECT id, first_name as name, last_name  as sirname, salary as zp FROM employee
+    WHERE first_name != 'Ivan' AND last_name LIKE 'Bob%'           -- LIKE 'Bob%' - начинается на 'Bob' (ILIKE - независимо от регистра)
+            AND salary IN (1000, 2000)      -- зарплата 1000 или 2000
+    ORDER BY name, sirname DESC     -- сортировка сначала по name, затем по sirname в обратном порядке
+    OFFSET 2    -- сколько записей от начала пропустить
+    LIMIT 10;   -- сколько записей показать
+
+
+********    Агрегирующие функции     ***************
+
+    SELECT sum(salary) FROM employee WHERE first_name LIKE 'Ivan';      -- сумма по полю salary для Ivan
+    SELECT avg(salary) FROM employee;      -- среднее по полю salary
+    SELECT max(salary) FROM employee;      -- максимальное по полю salary
+    SELECT min(salary) FROM employee;      -- минимальное по полю salary
+    SELECT count(*) FROM employee;         -- число строк в выборке
+
+    SELECT id, concat(first_name, ' ', last_name), salary FROM  employee;   -- concat - склеит поля first_name и last_name
+    SELECT lower(first_name), upper(last_name) FROM employee;   -- lower, upper - меняют регистр
+
+
+********    Подзапросы     ***************
+-- Найти среднее по двум самым низкооплачиваемым сотрудникам
+-- В параметры FROM(), IN(), LIKE(), BETWEEN() как источник для внешнего запроса передается подзапрос
+SELECT avg(promresult.salary) FROM (SELECT * FROM employee ORDER BY salary LIMIT 2) as promresult;
+
+-- Подзапрос должен возвращать столько же колонок и того же типа, что и в условии WHERE внешнего запроса
+SELECT * FROM employee WHERE company_id IN (SELECT company.id FROM company WHERE date > '2000-01-01');
+
+-- при использовании подзапроса с условием "> < != =" подзапрос должен возвращать одно значение
+DELETE FROM employee WHERE salary = (SELECT max(salary) FROM employee) RETURNING *; -- RETURNING * вернет все удаленные строки таблицы
+
+-- Изменение данных в полях таблиц
+UPDATE employee SET company_id = 2, salary = 2500 where last_name = 'Bobunec' RETURNING *;  -- RETURNING * вернет все измененные строки таблицы
+
+
+
+
+
+
