@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="driver" class="java.lang.String">
+        <constructor-arg type="java.lang.String" value="PostgresqlDriver"/>
+    </bean>
+
+
+    <bean id="pool1" name="p1, p2" class="org.example.database.ConnectionPool">
+        <constructor-arg name="username" type="java.lang.String" value="postgres" />
+        <constructor-arg name="poolSize" type="java.lang.Integer" value= "10" />
+
+        <constructor-arg name="args" type="java.util.List">
+            <list>
+                <value> arg1 = value1 </value>
+                <value> arg2 = 11 </value>
+                <value> arg1 = Test </value>
+                <ref bean="driver"/>                <!-- ссылка на id другого бина />-->
+            </list>
+        </constructor-arg>
+
+        <constructor-arg name="properties" type="java.util.Map">
+            <map>
+                <entry key="mapKey1" value="mapValue1"/>
+                <entry key="mapKey2" value="mapValue2"/>
+                <entry key="driver" value-ref="driver"/>    <!-- ссылка на id другого бина />-->
+            </map>
+        </constructor-arg>
+
+    </bean>
+
+    <bean id="companyRepository" class="org.example.database.CompanyRepository">
+        <constructor-arg ref="p1"/>
+    </bean>
+
+
+<!--    <bean id="pool2" name="p3" class="org.example.database.ConnectionPool" />-->
+
+</beans>

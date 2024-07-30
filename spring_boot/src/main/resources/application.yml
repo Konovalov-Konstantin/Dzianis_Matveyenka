@@ -1,0 +1,45 @@
+spring:
+  application:
+  name: spring_boot
+
+  profiles:
+    active: qa
+
+# настройка уровня для вывода логирования (WARN и выше)
+logging:
+  level:
+    root: info
+    # также можно настроить уровень логирования для конкретного пакета / класса
+    org.example.pool.ConnectionPool: warn
+    # запись логов в файл
+#  file:
+#    name: example.log
+#    path: /
+
+db:
+  # если не будет передан параметр 'username.value', то подставится дефолтный - 'postgres'
+  username: ${username.value:postgres}
+  password: pass
+  driver: PosgresDriver
+  url: postgres:5432
+  hosts: localhost, 127.0.0.1
+
+# Map<K,V>
+  properties:
+    first: 123
+    second: 567
+    third.value: Third
+
+# объект
+  pool:
+    size: 12
+    timeout: 10
+
+# список объектов
+  pools:
+    - size: 1
+      timeout: 1
+    - size: 2
+      timeout: 2
+    - size: 3
+      timeout: 3

@@ -1,0 +1,7 @@
+# нужно в тестовых классах активировать профиль "test" (@ActiveProfiles("test")), чтоб считался application-test.yml
+# тогда будут просканированы application-test.yml файл из тестовых resources и application.yml из resources основного приложения
+# при этом параметры из application-test.yml перезатрут параметры с теми же ключами из application.yml т.к. в тестах он приорететнее.
+
+db:
+  username: test
+  password: test
