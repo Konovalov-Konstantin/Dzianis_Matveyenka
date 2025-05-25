@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.pool.ConnectionPool;
+import org.example.repository.CatRepository;
 import org.example.repository.CompanyRepository;
 import org.example.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,8 @@ public class ApplicationContextAnnotationConfig {
 //                System.out.print(stringObjectEntry.getKey() + "  ->  ");
 //                System.out.println(stringObjectEntry.getValue());
 //            }
+            CatRepository catRepository = context.getBean("catRepository", CatRepository.class);
+            System.out.println(catRepository);
         }
     }
 }

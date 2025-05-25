@@ -1,5 +1,6 @@
 package org.example.config;
 
+import org.example.bpp.InjectBeanPostProcessor;
 import org.example.pool.ConnectionPool;
 import org.example.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,5 +21,10 @@ public class AppConfig {
 //    @Scope(BeanDefinition.SCOPE_PROTOTYPE)
     UserRepository userRepository (ConnectionPool pool2){
         return new UserRepository(pool2);
+    }
+
+    @Bean
+    InjectBeanPostProcessor injectBeanPostProcessor() {
+        return new InjectBeanPostProcessor();
     }
 }
