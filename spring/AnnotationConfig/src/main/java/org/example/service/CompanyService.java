@@ -24,9 +24,10 @@ public class CompanyService {
     }
 
     public Optional<CompanyReadDto> findById(Integer id) {
-        return companyRepository.findById(1).map(entity -> {
-            eventPublisher.publishEvent(new EntityEvent(entity, "READ"));
-            return new CompanyReadDto(entity.getId());
+        return companyRepository.findById(1)
+                .map(entity -> {
+                    eventPublisher.publishEvent(new EntityEvent(entity, "READ"));
+            return new CompanyReadDto(entity.id());
         });
     }
 }

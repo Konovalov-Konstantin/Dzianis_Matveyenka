@@ -28,12 +28,12 @@ public class ConnectionPool {
 //        this.properties = properties;
     }
 
-    @PostConstruct
+    @PostConstruct // метод, который должен быть выполнен после создания бина, но перед его использованием (можно подкрутить настройки бина)
     private void init(){
         System.out.println(" *** ConnectionPool init method " + this);
     }
 
-    @PreDestroy
+    @PreDestroy // метод, который должен быть вызван перед уничтожением объекта после закрытия спринг-контекста
     private void destroy(){
         System.out.println(" *** ConnectionPool destroy method " + this);
     }

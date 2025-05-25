@@ -2,6 +2,7 @@ package org.example.repository;
 
 import org.example.database.entity.Company;
 import org.example.pool.ConnectionPool;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
@@ -15,7 +16,7 @@ public class CompanyRepository {
     private final List<ConnectionPool> pools;
     private final Integer poolSize;
 
-    public CompanyRepository(ConnectionPool pool1,
+    public CompanyRepository(@Qualifier("pool1") ConnectionPool pool1,
                              List<ConnectionPool> pools,
                              @Value("${db.poolSize}") Integer poolSize) {
         this.connectionPool = pool1;
@@ -28,7 +29,7 @@ public class CompanyRepository {
     }
 
     public Optional<Company> findById(Integer id){
-        return Optional.of(new Company(1, "NewCompany"));
+        return Optional.of(new Company(id, "NewCompany"));
     }
 
 }

@@ -3,7 +3,6 @@ package org.example.config;
 import org.example.pool.ConnectionPool;
 import org.example.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.*;
 
 //@Import(AnyConfiguration.class) - для импорта конфиг-классов из пакетов/модулей, которые не попадают под сканирование контекста
