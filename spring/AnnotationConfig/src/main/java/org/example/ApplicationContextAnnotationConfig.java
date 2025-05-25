@@ -1,16 +1,10 @@
 package org.example;
 
-import org.example.pool.ConnectionPool;
-import org.example.repository.CatRepository;
+import org.example.repository.MyLogger;
 import org.example.repository.CompanyRepository;
 import org.example.service.CompanyService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.util.Assert;
-
-import java.util.List;
 
 //@Configuration
 @ComponentScan
@@ -35,8 +29,9 @@ public class ApplicationContextAnnotationConfig {
 //                System.out.print(stringObjectEntry.getKey() + "  ->  ");
 //                System.out.println(stringObjectEntry.getValue());
 //            }
-            CatRepository catRepository = context.getBean("catRepository", CatRepository.class);
-            System.out.println(catRepository);
+
+            MyLogger catTestLogger = context.getBean("catTestLogger", MyLogger.class);
+            catTestLogger.testLogging();    // тест сквозного функционала логирования (см.LoggingBeanPostProcessor, аннотация @Logging)
         }
     }
 }

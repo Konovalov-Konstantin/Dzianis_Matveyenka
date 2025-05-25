@@ -1,6 +1,7 @@
 package org.example.config;
 
 import org.example.bpp.InjectBeanPostProcessor;
+import org.example.bpp.LoggingBeanPostProcessor;
 import org.example.pool.ConnectionPool;
 import org.example.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,5 +27,10 @@ public class AppConfig {
     @Bean
     InjectBeanPostProcessor injectBeanPostProcessor() {
         return new InjectBeanPostProcessor();
+    }
+
+    @Bean
+    LoggingBeanPostProcessor loggingBeanPostProcessor() {
+        return new LoggingBeanPostProcessor();
     }
 }
