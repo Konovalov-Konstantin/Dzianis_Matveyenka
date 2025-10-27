@@ -17,8 +17,8 @@ public class ApplicationContextAnnotationConfig {
             CompanyRepository repository = context.getBean(CompanyRepository.class);
             repository.getPools().forEach(pool-> System.out.println("pool -> " + pool.getUsername() + " " +  pool.getPoolSize()));
 
-            // отправка события listener'aм, которые подписаны на данный event
             CompanyService companyService = context.getBean("companyService", CompanyService.class);
+            // отправка события listener'aм, которые подписаны на данный event
             companyService.findById(1);
 
             ConnectionPool pool1 = context.getBean("pool1", ConnectionPool.class);
