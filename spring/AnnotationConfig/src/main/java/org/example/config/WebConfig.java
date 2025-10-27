@@ -7,17 +7,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 @Configuration
-@Profile("web") // активируется, когда активирован профиль web (spring.profiles.active=web в application.properties)
 public class WebConfig {
 
     @Bean
-    ConnectionPool pool3(){
-        return new ConnectionPool("pool3",10);
+    @Profile("web") // активируется, когда активирован профиль web (spring.profiles.active=web в application.properties)
+    ConnectionPool pool4(){
+        return new ConnectionPool("pool4",10);
     }
 
     @Bean
-    UserRepository userRepository3(ConnectionPool pool3) {
-        return new UserRepository(pool3);
+    UserRepository userRepository4() {
+        return new UserRepository(pool4());
     }
 
 }

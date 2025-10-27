@@ -7,17 +7,22 @@ import org.example.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 
-//@Import(AnyConfiguration.class) - для импорта конфиг-классов из пакетов/модулей, которые не попадают под сканирование контекста
-@Configuration
-@PropertySource("classpath:application.properties")
+//@Import(AnyConfiguration.class) - для импорта других @Configuration классов из пакетов/модулей, которые не попадают под сканирование контекста
+@Configuration  // JAVA based конфигурация (аннотации @Configuration, @Bean)
+@PropertySource("classpath:application.properties") // откуда тянуть property
 public class AppConfig {
 
-    @Bean
+    @Bean   // аннотация @Bean используется в классах, помеченных @Configuration
     ConnectionPool pool2 (@Value("${db.username}") String username) {
-        return new ConnectionPool(username, 20);
+        return new ConnectionPool(username.concat("2"), 20);
     }
 
-    @Bean("userRepository2")
+    @Bean
+    ConnectionPool pool3 () {
+        return new ConnectionPool( "postgres3", 30);
+    }
+
+    @Bean("userRepository20")
     @Profile("prod")    // бин создастся, когда активирован профиль prod. Также используются логические (!prod, prod & dev, prod | dev )
 //    @Scope(BeanDefinition.SCOPE_PROTOTYPE)
     UserRepository userRepository (ConnectionPool pool2){

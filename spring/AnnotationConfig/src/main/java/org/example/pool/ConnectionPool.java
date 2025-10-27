@@ -1,5 +1,6 @@
 package org.example.pool;
 
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -9,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component("pool1")
+@Data
 public class ConnectionPool {
     private final String username;
     private final Integer poolSize;

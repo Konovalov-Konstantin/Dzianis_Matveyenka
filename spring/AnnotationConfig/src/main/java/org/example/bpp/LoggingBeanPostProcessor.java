@@ -2,6 +2,7 @@ package org.example.bpp;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -9,12 +10,13 @@ import java.lang.reflect.Proxy;
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class LoggingBeanPostProcessor implements BeanPostProcessor {
 
     private final Map<String, Class<?>> loggingBeans = new HashMap<>();
 
     @Override
-    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException { // выполнится перед методом @PostConstuct в классе CatRepository
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException { // выполнится перед методом @PostConstruct в классе CatTestLogger
         if (bean.getClass().isAnnotationPresent(Logging.class)) {
             loggingBeans.put(beanName, bean.getClass());
         }

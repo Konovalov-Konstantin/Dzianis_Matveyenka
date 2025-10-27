@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 @Repository
+@Qualifier("userRepository20")
 public class UserRepository {
 
     private final ConnectionPool connectionPool;

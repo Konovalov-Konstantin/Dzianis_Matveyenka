@@ -24,6 +24,6 @@ public class CatTestLogger implements MyLogger {
 
     @Override
     public void testLogging() {
-        // должен вывести в консоль 'Logging method testLogging of class CatTestLogger' из LoggingBeanPostProcessor.postProcessAfterInitialization
+        // при вызове метода должен вывести в консоль 'Logging method testLogging of class CatTestLogger' из LoggingBeanPostProcessor.postProcessAfterInitialization
     }
 }

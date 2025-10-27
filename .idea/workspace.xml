@@ -4,35 +4,68 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8668633-c346-47bc-9b03-e6368ee3642c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="d8668633-c346-47bc-9b03-e6368ee3642c" name="Changes" comment="add gitignore">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/AnnotationConfig/spring.AnnotationConfig.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/spring_boot.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/spring_boot.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/listener/entity/AccessType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/spring/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/spring/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/spring/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/spring/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/7.4/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/7.4/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/7.4/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/7.4/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/7.4/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/7.4/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/ApplicationContextAnnotationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/ApplicationContextAnnotationConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/config/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/config/AppConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/database/entity/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/database/entity/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/dto/CompanyReadDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/dto/CompanyReadDto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/listener/EntityListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/listener/EntityListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/listener/entity/EntityEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/listener/entity/EntityEvent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/pool/ConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/pool/ConnectionPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/repository/CompanyRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/repository/CompanyRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/repository/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/service/CompanyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/service/CompanyService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build/classes/java/main/org/example/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/ApplicationContextAnnotationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/ApplicationContextAnnotationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/bpp/InjectBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/bpp/InjectBeanPostProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/bpp/LoggingBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/bpp/LoggingBeanPostProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/spring/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/spring/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/spring/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/spring/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring_boot/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/spring_boot/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/listener/EntityListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/listener/EntityListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/listener/entity/EntityEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/listener/entity/EntityEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/pool/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/pool/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/repository/CatTestLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/repository/CatTestLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/service/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/service/CompanyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/XMLConfig/build/classes/java/main/org/example/ApplicationContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/XMLConfig/build/classes/java/main/org/example/ApplicationContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/XMLConfig/build/classes/java/main/org/example/database/CompanyRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/XMLConfig/build/classes/java/main/org/example/database/CompanyRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/XMLConfig/build/classes/java/main/org/example/database/ConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/spring/XMLConfig/build/classes/java/main/org/example/database/ConnectionPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/XMLConfig/build/resources/main/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring/XMLConfig/build/resources/main/application.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/XMLConfig/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/spring/XMLConfig/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/XMLConfig/src/main/resources/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring/XMLConfig/src/main/resources/application.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/build/classes/java/main/org/example/ApplicationContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/build/classes/java/main/org/example/database/CompanyRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/build/classes/java/main/org/example/database/ConnectionPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/build/resources/main/application.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_boot/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/spring_boot/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_boot/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/spring_boot/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring_boot/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/spring_boot/gradlew.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +89,9 @@
         <task path="$PROJECT_DIR$/spring/AnnotationConfig">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/spring_boot">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -66,17 +102,22 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="spring" type="f1a62948:ProjectNode" />
-                <item name="AnnotationConfig" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="spring" type="f1a62948:ProjectNode" />
-                <item name="AnnotationConfig" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="spring_boot" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring_boot" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
             </expand>
             <select />
@@ -84,6 +125,13 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -96,6 +144,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2jyAotsD8X6nTiB1IChS1LNFroQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -104,12 +156,29 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.CompanyServiceTest.findById.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
+    "Gradle.spring [build].executor": "Run",
+    "Gradle.spring [clean].executor": "Run",
+    "Gradle.spring:AnnotationConfig [:AnnotationConfig:org.example.ApplicationContextAnnotationConfig.main()].executor": "Run",
     "Gradle.spring:AnnotationConfig [assemble].executor": "Run",
+    "Gradle.spring:XMLConfig [:XMLConfig:org.example.ApplicationContext.main()].executor": "Debug",
+    "Gradle.spring_boot [build].executor": "Run",
+    "Gradle.spring_boot [clean].executor": "Run",
+    "Gradle.spring_boot [dependencies].executor": "Run",
+    "Gradle.spring_boot [test].executor": "Run",
+    "Gradle.spring_boot [wrapper].executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Konstantin/Desktop/Dzianis Matveyenka spring",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Кристина/Desktop/Dzianis_Matveyenka/spring",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,15 +187,49 @@
     "project.structure.last.edited": "Facets",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.33793104",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "spring.configuration.checksum": "a8782720acc1ef3733a3f4d083b842ba"
+    "settings.editor.selected.configurable": "File.Encoding",
+    "spring.configuration.checksum": "a8782720acc1ef3733a3f4d083b842ba",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.spring:AnnotationConfig [assemble]">
-    <configuration name="spring:AnnotationConfig [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Кристина\Desktop\Dzianis_Matveyenka\spring" />
+      <recent name="C:\Users\Кристина\Desktop\Dzianis_Matveyenka\spring\XMLConfig" />
+      <recent name="C:\Users\Кристина\Desktop\Dzianis_Matveyenka\spring\AnnotationConfig" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ApplicationContextAnnotationConfig">
+    <configuration name="ApplicationContext" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.ApplicationContext" />
+      <module name="spring.XMLConfig.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationContextAnnotationConfig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.ApplicationContextAnnotationConfig" />
+      <module name="spring.AnnotationConfig.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="spring [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/spring/AnnotationConfig" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -134,7 +237,51 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="assemble" />
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="spring [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="spring_boot [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring_boot" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -154,9 +301,21 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.spring:AnnotationConfig [assemble]" />
+        <item itemvalue="Gradle.spring [build]" />
+        <item itemvalue="Gradle.spring [clean]" />
+        <item itemvalue="Application.ApplicationContextAnnotationConfig" />
+        <item itemvalue="Application.ApplicationContext" />
+        <item itemvalue="Gradle.spring_boot [build]" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -169,6 +328,13 @@
       <workItem from="1722349123765" duration="666000" />
       <workItem from="1722349837022" duration="805000" />
       <workItem from="1722350743124" duration="143000" />
+      <workItem from="1758994704161" duration="28000" />
+      <workItem from="1761407561731" duration="325000" />
+      <workItem from="1761408640985" duration="253000" />
+      <workItem from="1761408903013" duration="150000" />
+      <workItem from="1761409115424" duration="322000" />
+      <workItem from="1761409453890" duration="106000" />
+      <workItem from="1761409578616" duration="37955000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1722350208638</created>
@@ -177,14 +343,83 @@
       <option name="project" value="LOCAL" />
       <updated>1722350208638</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add gitignore">
+      <option name="closed" value="true" />
+      <created>1761422411227</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1761422411227</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add gitignore">
+      <option name="closed" value="true" />
+      <created>1761422456214</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761422456214</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add gitignore">
+      <option name="closed" value="true" />
+      <created>1761422627896</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761422627896</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add gitignore">
+      <option name="closed" value="true" />
+      <created>1761465799761</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761465799761</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add" />
-    <option name="LAST_COMMIT_MESSAGE" value="add" />
+    <MESSAGE value="add gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="add gitignore" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring/XMLConfig/src/main/java/org/example/ApplicationContext.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/bpp/InjectBeanPostProcessor.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spring/AnnotationConfig/src/main/java/org/example/config/AppConfig.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
