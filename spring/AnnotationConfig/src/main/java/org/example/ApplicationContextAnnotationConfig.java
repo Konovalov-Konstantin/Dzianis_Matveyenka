@@ -8,7 +8,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 
 //@Configuration
-@ComponentScan  // сканирует все пакеты с подпакетами от расположения текущего класса и создает бины из классов с аннотациями @Component, @Service, @Repository, @Controller, @RestController, @ControllerAdvice
+@ComponentScan  // сканирует все пакеты с подпакетами от расположения текущего класса и создает бины из классов с аннотациями @Component, @Service,
+                // @Repository, @Controller, @RestController, @ControllerAdvice. Для SpringBoot приложения эта аннотация не нужна.
 public class ApplicationContextAnnotationConfig {
 
     public static void main(String[] args) {

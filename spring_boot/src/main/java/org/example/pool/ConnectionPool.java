@@ -12,9 +12,9 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class ConnectionPool {
 
-    /** чтоб в конструкторе ломбока (@RequiredArgsConstructor) в это поле подтянулось значение из "application.yml (application.properties)",
-     * нужно создать в корне проекта файл "lombok.config" и добавить в него нужные аннотации ломбока (Qualifier, Value и т.д.)
-     * с полными путями до этих аннотаций (см. урок 35.Lombok **/
+    /** чтоб в сгенерированном ломбоком конструкторе (@RequiredArgsConstructor) в поля userName и poolSize подтянулись значения (@Value)
+     * из "application.yml (application.properties)", нужно создать в корне проекта файл "lombok.config" и добавить в него нужные
+     * аннотации ломбока (Qualifier, Value и т.д.) с полными путями до этих аннотаций (см. урок 35.Lombok) **/
     @Value("${db.username}")
     private final String username;
     @Value("${db.pool.size}")

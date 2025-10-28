@@ -9,7 +9,10 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 public class UserRepository {
 
-    @Qualifier("pool2") // чтоб в конструкторе ломбока (@RequiredArgsConstructor) подтянулось значение в поле, нужно создать в корне проекта файл "lombok.config" и добавить в него нужные аннотации ломбока (Qualifier, Value и т.д.) с полными путями до этих аннотаций
+    /** чтоб в сгенерированном ломбоком конструкторе (@RequiredArgsConstructor) в поля userName и poolSize подтянулись значения (@Value)
+     * из "application.yml (application.properties)", нужно создать в корне проекта файл "lombok.config" и добавить в него нужные
+     * аннотации ломбока (Qualifier, Value и т.д.) с полными путями до этих аннотаций (см. урок 35.Lombok) **/
+    @Qualifier("pool2")
     private final ConnectionPool connectionPool;
 
 }

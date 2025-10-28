@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.2.5'
-    id 'io.spring.dependency-management' version '1.1.4'
+    id 'org.springframework.boot' version '3.2.5'   // версия spring-boot
+    id 'io.spring.dependency-management' version '1.1.4'    // автоматически устраняет несовместимость версий библиотек
     id 'io.freefair.lombok' version '8.6'
 }
 
@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter'   // версии не указываются т.к. подтянутся dependency-management плагином нужные версии, без конфликтов
     implementation 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

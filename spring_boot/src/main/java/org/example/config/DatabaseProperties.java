@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Map;
 
 // данные тянутся из application.yml по префиксу 'db' (видео_урок_38)
-// также нужна аннотация @ConfigurationPropertiesScan над главным классом
-// можно внедрить DatabaseProperties как бин в нужное место и геттерами вытаскивать нужные конфиги
-@Value
+// также нужна аннотация @ConfigurationPropertiesScan над главным классом (@SpringBootApplication).
+// Можно внедрить DatabaseProperties как бин в нужное место и геттерами вытаскивать нужные конфиги
+@Value  // включает в себя @Getter @FieldDefaults(makeFinal=true, level=AccessLevel.PRIVATE) @AllArgsConstructor @ToString @EqualsAndHashCode.
 @ConfigurationProperties(prefix = "db")
 public class DatabaseProperties {
 

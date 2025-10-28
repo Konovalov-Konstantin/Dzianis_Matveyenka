@@ -17,10 +17,9 @@ logging:
 #    path: /
 
 db:
-  # если не будет передан параметр 'username.value', то подставится дефолтный - 'postgres'
-  username: ${username.value:postgres}
-  password: pass
-  driver: PosgresDriver
+  username: ${username.value:postgres}  # если не будет передан параметр 'username.value' (например через run->edit configs->VMOptions или program.arguments и т.д.), то подставится дефолтный - 'postgres'
+  password: ${db.username}  # подставится значение из параметра выше
+  driver: PostgresDriver
   url: postgres:5432
   hosts: localhost, 127.0.0.1
 
