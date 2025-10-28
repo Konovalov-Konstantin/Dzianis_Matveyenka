@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.ConfigurableApplicationContext;
 
-@SpringBootApplication
+@SpringBootApplication  // должна стоять над раннером приложения (класс с методом main) в root-пакете
 @ConfigurationPropertiesScan
 public class Application {
 

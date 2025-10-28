@@ -1,1 +1,4 @@
-db.poolSize: 50
+db:
+  pool:
+    size: 50   #  если активирован профиль 'qa' (spring.profiles.active или run->edit configs->active profiles
+               #  или run->edit configs->program arguments), то значение 'db.pool.size' из application.yml перезатрется текущим

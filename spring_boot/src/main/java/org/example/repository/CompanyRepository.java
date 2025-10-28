@@ -1,5 +1,6 @@
 package org.example.repository;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.example.database.entity.Company;
 import org.example.pool.ConnectionPool;
@@ -12,19 +13,21 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
+@Getter
 public class CompanyRepository {
 
-    @Qualifier("pool1") // чтоб в конструкторе ломбока (@RequiredArgsConstructor) подтянулось значение в поле, нужно создать в корне проекта файл "lombok.config" и добавить в него нужные аннотации ломбока (Qualifier, Value и т.д.) с полными путями до этих аннотаций
+    /** чтоб в сгенерированном ломбоком конструкторе (@RequiredArgsConstructor) в поля userName и poolSize подтянулись значения (@Value)
+     * из "application.yml (application.properties)", нужно создать в корне проекта файл "lombok.config" и добавить в него нужные
+     * аннотации ломбока (Qualifier, Value и т.д.) с полными путями до этих аннотаций (см. урок 35.Lombok) **/
+    @Qualifier("pool1")
     private final ConnectionPool connectionPool;
 
-    private final List<ConnectionPool> pools;
-
-    @Value("${db.pool.size}")    // чтоб в конструкторе ломбока (@RequiredArgsConstructor) в это поле подтянулось значение из "application.properties", нужно создать в корне проекта файл "lombok.config" и добавить в него нужные аннотации ломбока (Qualifier, Value и т.д.) с полными путями до этих аннотаций
+    /** чтоб в сгенерированном ломбоком конструкторе (@RequiredArgsConstructor) в поля userName и poolSize подтянулись значения (@Value)
+     * из "application.yml (application.properties)", нужно создать в корне проекта файл "lombok.config" и добавить в него нужные
+     * аннотации ломбока (Qualifier, Value и т.д.) с полными путями до этих аннотаций (см. урок 35.Lombok) **/
+    @Value("${db.pool.size}")
     private final Integer poolSize;
-
-    public List<ConnectionPool> getPools() {
-        return pools;
-    }
+    private final List<ConnectionPool> pools;
 
     public Optional<Company> findById(Integer id){
         return Optional.of(new Company(1, "NewCompany"));
