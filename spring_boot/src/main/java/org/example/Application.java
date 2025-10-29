@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication  // должна стоять над раннером приложения (класс с методом main) в root-пакете
-@ConfigurationPropertiesScan
+@ConfigurationPropertiesScan // чтоб просканировались конфиг-классы @ConfigurationProperties (см.DatabaseProperties.class видео_урок38)
 public class Application {
 
     public static void main(String[] args) {

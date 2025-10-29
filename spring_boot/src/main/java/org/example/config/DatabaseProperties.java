@@ -8,13 +8,13 @@ import java.util.List;
 import java.util.Map;
 
 // данные тянутся из application.yml по префиксу 'db' (видео_урок_38)
-// также нужна аннотация @ConfigurationPropertiesScan над главным классом (@SpringBootApplication).
+// также нужна аннотация @ConfigurationPropertiesScan над главным классом (@SpringBootApplication) либо @Component над данным классом
 // Можно внедрить DatabaseProperties как бин в нужное место и геттерами вытаскивать нужные конфиги
 @Value  // включает в себя @Getter @FieldDefaults(makeFinal=true, level=AccessLevel.PRIVATE) @AllArgsConstructor @ToString @EqualsAndHashCode.
-@ConfigurationProperties(prefix = "db")
+@ConfigurationProperties(prefix = "db") // в параметрах указывается префикс из application.yml
 public class DatabaseProperties {
 
-    String username;
+    String username;    // названия полей должны совпадать с названиями в application.yml, тогда значения подставятся корректно
     String password;
     String driver;
     String url;
@@ -23,7 +23,7 @@ public class DatabaseProperties {
     List<PoolProperties> pools;
     Map<String, Object> properties;
 
-    @ConstructorBinding
+    @ConstructorBinding // указывает, что этот конструктор использовать для маппинга свойств конфигурации с помощью аргументов конструктора
     public DatabaseProperties(String username, String password, String driver, String url, String hosts,
                               PoolProperties pool, List<PoolProperties> pools, Map<String, Object> properties) {
         this.username = username;
