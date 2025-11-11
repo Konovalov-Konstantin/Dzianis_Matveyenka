@@ -22,11 +22,11 @@ public class ConnectionPool {
 
     @PostConstruct
     private void init(){
-        log.warn(" *** ConnectionPool init method " + this);
+        log.warn(" *** ConnectionPool init method {}", this);
     }
 
     @PreDestroy
     private void destroy(){
-        log.info(" *** ConnectionPool destroy method " + this);
+        log.info(" *** ConnectionPool destroy method {}", this);
     }
 }
