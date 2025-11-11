@@ -19,7 +19,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @ActiveProfiles("test")   // активируется профиль test и считывается application-test.yml, переопределяя конфиги с теми же ключами, что и в application.yml основного приложения
 @RequiredArgsConstructor    // чтобы не использовать @Autowired над полями
 @TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)   // чтобы не использовать @Autowired над полями (либо можно через параметр в файле spring.properties - урок №44)
-
 //@ExtendWith(SpringExtension.class)  // SpringExtension предоставляет спринг-контекст
 //@ContextConfiguration(
 //        classes = Application.class,        // указываем какой конкретно контекст нужно использовать в тесте
