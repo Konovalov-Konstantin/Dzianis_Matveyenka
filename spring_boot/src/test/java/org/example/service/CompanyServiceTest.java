@@ -1,36 +1,49 @@
 package org.example.service;
 
-import lombok.RequiredArgsConstructor;
-import org.example.config.DatabaseProperties;
+import org.example.database.entity.Company;
 import org.example.dto.CompanyReadDto;
+import org.example.listener.entity.EntityEvent;
+import org.example.repository.CompanyRepository;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.TestConstructor;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.context.ApplicationEventPublisher;
 
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
-@SpringBootTest
-@ActiveProfiles("test")   // активируется профиль test и считывается application-test.yml, переопределяя конфиги с теми же ключами, что и в application.yml основного приложения
-@RequiredArgsConstructor    // чтобы не использовать @Autowired над полями
-@TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)   // чтобы не использовать @Autowired над полями
+@ExtendWith(MockitoExtension.class)
 class CompanyServiceTest {
 
     private static final Integer COMPANY_ID = 1;
 
-    private final CompanyService companyService;
-    private final DatabaseProperties databaseProperties;
+    @Mock
+    private CompanyRepository companyRepository;
+    @Mock
+    private UserService userService;
+    @Mock
+    private ApplicationEventPublisher eventPublisher;
+    @InjectMocks
+    private CompanyService companyService;
 
     @Test
-    void findById(){
+    void findById() {
+
+        doReturn(Optional.of(new Company(COMPANY_ID, "testCompany")))
+                .when(companyRepository).findById(COMPANY_ID);
+
         Optional<CompanyReadDto> actualResult = companyService.findById(COMPANY_ID);
 
         assertTrue(actualResult.isPresent());
 
         CompanyReadDto expectedResult = new CompanyReadDto(COMPANY_ID);
         actualResult.ifPresent(actual -> assertEquals(expectedResult, actual));
+        verify(eventPublisher).publishEvent(any(EntityEvent.class));
+        verifyNoMoreInteractions(eventPublisher, userService);
     }
 
 }

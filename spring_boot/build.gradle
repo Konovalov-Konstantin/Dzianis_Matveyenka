@@ -9,7 +9,7 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
 java {
-    sourceCompatibility = '17'
+    sourceCompatibility = '23'
 }
 
 repositories {
@@ -20,8 +20,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'   // версии не указываются т.к. подтянутся dependency-management плагином нужные версии, без конфликтов
     implementation 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation "org.mockito:mockito-core:2.25.1"
 }
 
-//tasks.named('test') {
-//    useJUnitPlatform()
-//}
+test {
+    useJUnitPlatform()
+}
