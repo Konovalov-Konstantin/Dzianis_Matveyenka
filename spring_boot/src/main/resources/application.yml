@@ -5,6 +5,17 @@ spring:
   profiles:
     active: qa
 
+  datasource:
+    url: jdbc:postgresql://localhost:5433/postgres
+    username: postgres
+    password: pass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        hbm2ddl.auto: validate
+
 # настройка уровня для вывода логирования (WARN и выше)
 logging:
   level:

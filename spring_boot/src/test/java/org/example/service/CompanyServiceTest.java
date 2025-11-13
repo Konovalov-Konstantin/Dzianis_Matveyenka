@@ -11,6 +11,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.context.ApplicationEventPublisher;
 
+import java.util.Collections;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -33,7 +34,7 @@ class CompanyServiceTest {
     @Test
     void findById() {
 
-        doReturn(Optional.of(new Company(COMPANY_ID, "testCompany")))
+        doReturn(Optional.of(new Company(COMPANY_ID, "testCompany", Collections.emptyMap())))
                 .when(companyRepository).findById(COMPANY_ID);
 
         Optional<CompanyReadDto> actualResult = companyService.findById(COMPANY_ID);
