@@ -3,7 +3,7 @@ package org.example.service;
 import lombok.RequiredArgsConstructor;
 import org.example.dto.CompanyReadDto;
 import org.example.listener.entity.EntityEvent;
-import org.example.repository.CompanyRepository;
+import org.example.database.repository.CompanyRepository;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

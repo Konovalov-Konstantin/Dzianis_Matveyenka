@@ -1,7 +1,7 @@
-package org.example.repository;
+package org.example.database.repository;
 
 import lombok.RequiredArgsConstructor;
-import org.example.pool.ConnectionPool;
+import org.example.database.pool.ConnectionPool;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 

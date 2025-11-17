@@ -21,7 +21,7 @@ logging:
   level:
     root: info
     # также можно настроить уровень логирования для конкретного пакета / класса
-    org.example.pool.ConnectionPool: warn
+    org.example.database.pool.ConnectionPool: warn
     # запись логов в файл
 #  file:
 #    name: example.log

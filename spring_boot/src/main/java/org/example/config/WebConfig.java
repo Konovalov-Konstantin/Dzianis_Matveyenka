@@ -1,7 +1,7 @@
 package org.example.config;
 
-import org.example.pool.ConnectionPool;
-import org.example.repository.UserRepository;
+import org.example.database.pool.ConnectionPool;
+import org.example.database.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;

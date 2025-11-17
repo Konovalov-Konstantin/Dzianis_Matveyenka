@@ -3,7 +3,7 @@ package org.example.service;
 import org.example.database.entity.Company;
 import org.example.dto.CompanyReadDto;
 import org.example.listener.entity.EntityEvent;
-import org.example.repository.CompanyRepository;
+import org.example.database.repository.CompanyRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

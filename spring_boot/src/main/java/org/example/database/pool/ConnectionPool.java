@@ -1,4 +1,4 @@
-package org.example.pool;
+package org.example.database.pool;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
