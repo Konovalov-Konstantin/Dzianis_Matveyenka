@@ -1,18 +1,21 @@
 package org.example.database.repository;
 
-import lombok.RequiredArgsConstructor;
-import org.example.database.pool.ConnectionPool;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Repository;
+import org.example.database.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
-@Repository
-@RequiredArgsConstructor
-public class UserRepository {
+import java.util.List;
 
-    /** чтоб в сгенерированном ломбоком конструкторе (@RequiredArgsConstructor) в поля userName и poolSize подтянулись значения (@Value)
-     * из "application.yml (application.properties)", нужно создать в корне проекта файл "lombok.config" и добавить в него нужные
-     * аннотации ломбока (Qualifier, Value и т.д.) с полными путями до этих аннотаций (см. урок 35.Lombok) **/
-    @Qualifier("pool2")
-    private final ConnectionPool connectionPool;
+public interface UserRepository extends JpaRepository<User, Long> {
 
+    // примеры методов с ручным составлением SQL-запросов
+    // если параметр nativeQuery в аннотации @Query false - тогда запрос пишется в HQL, если в true - тогдв в SQL
+
+    // пример с HQL
+    @Query("select u from User u where u.firstname like :firstName and u.lastname like :lastName")
+    List<User> findAllBy(String firstName, String lastName);
+
+    // пример с SQL
+    @Query(value = "SELECT u.* FROM users u WHERE u.username = :username", nativeQuery = true)
+    List<User> findAllByUserName(String username);
 }

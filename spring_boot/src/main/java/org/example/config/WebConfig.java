@@ -15,9 +15,9 @@ public class WebConfig {
         return new ConnectionPool("pool3",10);
     }
 
-    @Bean
-    UserRepository userRepository3(ConnectionPool pool3) {
-        return new UserRepository(pool3);
-    }
+//    @Bean
+//    UserRepository userRepository3(ConnectionPool pool3) {
+//        return new UserRepository(pool3);
+//    }
 
 }

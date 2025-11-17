@@ -1,10 +1,7 @@
 package org.example.database.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -13,6 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 @Data
+@ToString(exclude = "userChats")        //  для исключения StackOverflowError при работе с сущностями, которые используют двустороннюю ассоциацию.
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

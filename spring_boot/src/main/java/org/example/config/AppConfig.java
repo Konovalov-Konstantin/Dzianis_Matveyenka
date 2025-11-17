@@ -17,10 +17,10 @@ public class AppConfig {
         return new ConnectionPool(username, poolsize);
     }
 
-    @Bean("userRepository2")
-    @Profile("prod")    // бин создастся, когда активирован профиль prod. Также используются логические (!prod, prod & dev, prod | dev )
+//    @Bean("userRepository2")
+//    @Profile("prod")    // бин создастся, когда активирован профиль prod. Также используются логические (!prod, prod & dev, prod | dev )
 //    @Scope(BeanDefinition.SCOPE_PROTOTYPE)
-    UserRepository userRepository (ConnectionPool pool2){
-        return new UserRepository(pool2);
-    }
+//    UserRepository userRepository (ConnectionPool pool2){
+//        return new UserRepository(pool2);
+//    }
 }

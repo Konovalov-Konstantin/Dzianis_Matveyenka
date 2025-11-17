@@ -11,9 +11,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestConstructor;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -52,5 +50,14 @@ class CompanyRepositoryTest {
         List<Company> companies = companyRepository.findAllByNameContainingIgnoreCase("mazon");
         assertNotNull(google);
         assertThat(companies).hasSize(1);
+    }
+
+    @Test
+    void checkFindByNameQuery() {
+        Optional<Company> company = companyRepository.findByNameQuery("Amazon");
+        assertNotNull(company);
+
+        company.map(c -> c.getLocales().values())
+                .ifPresent(x -> assertEquals(2, x.size()));
     }
 }
