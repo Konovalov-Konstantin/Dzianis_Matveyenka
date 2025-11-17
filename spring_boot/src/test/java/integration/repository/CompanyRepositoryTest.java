@@ -12,6 +12,7 @@ import org.springframework.test.context.TestConstructor;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -43,5 +44,13 @@ class CompanyRepositoryTest {
         entityManager.flush();
         Optional<Company> mustBeNullCompany = companyRepository.findById(4);
         assertTrue(mustBeNullCompany.isEmpty());
+    }
+
+    @Test
+    void checkFindByQueries() {
+        Optional<Company> google = companyRepository.findByName("Google");
+        List<Company> companies = companyRepository.findAllByNameContainingIgnoreCase("mazon");
+        assertNotNull(google);
+        assertThat(companies).hasSize(1);
     }
 }
