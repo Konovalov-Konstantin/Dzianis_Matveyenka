@@ -1,5 +1,6 @@
 package org.example.database.repository;
 
+import jakarta.persistence.LockModeType;
 import org.example.database.entity.Role;
 import org.example.database.entity.User;
 import org.springframework.data.domain.Page;
@@ -7,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
@@ -32,6 +34,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     int updateRole(Role role, Long... ids);
 
     // динамическа сортировка (см. тест findTop3ByBirthDateBeforeTest)
+    @Lock(LockModeType.OPTIMISTIC)  // уровень блокировки данных. Для обнаружения конфликтов в entity используется доп.поле с аннотацией @Version
     List<User> findTop3ByBirthDateBefore(LocalDate birthDate, Sort sort);   // вернет не более 3х User-ов
 
     // запрос с пагинацией результата (см тест checkPagebleTest)
