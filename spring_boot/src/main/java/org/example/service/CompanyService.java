@@ -18,10 +18,10 @@ public class CompanyService {
     private final CompanyRepository companyRepository;
     private final ApplicationEventPublisher eventPublisher;
 
-    @Transactional  // параметр propagation определяет,что будет если внутри открытой транзакции вызывается метод, помеченный @Transactional (по дефолту propagation = required новая транзакция не открывается, а выполняется в родительской).
-                    // параметр isolation определяет уровень изоляции транзакций (read_committed, repeatable_read и т.д. По дефолту у postgres - read_committed)
-                    // параметр readonly используется для оптимизации (если данные только читаются из БД и никак не меняются)
-                    // timeout - таймаут для транзакции
+    @Transactional  // РїР°СЂР°РјРµС‚СЂ propagation РѕРїСЂРµРґРµР»СЏРµС‚,С‡С‚Рѕ Р±СѓРґРµС‚ РµСЃР»Рё РІРЅСѓС‚СЂРё РѕС‚РєСЂС‹С‚РѕР№ С‚СЂР°РЅР·Р°РєС†РёРё РІС‹Р·С‹РІР°РµС‚СЃСЏ РјРµС‚РѕРґ, РїРѕРјРµС‡РµРЅРЅС‹Р№ @Transactional (РїРѕ РґРµС„РѕР»С‚Сѓ propagation = required РЅРѕРІР°СЏ С‚СЂР°РЅР·Р°РєС†РёСЏ РЅРµ РѕС‚РєСЂС‹РІР°РµС‚СЃСЏ, Р° РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ РІ СЂРѕРґРёС‚РµР»СЊСЃРєРѕР№).
+                    // РїР°СЂР°РјРµС‚СЂ isolation РѕРїСЂРµРґРµР»СЏРµС‚ СѓСЂРѕРІРµРЅСЊ РёР·РѕР»СЏС†РёРё С‚СЂР°РЅР·Р°РєС†РёР№ (read_committed, repeatable_read Рё С‚.Рґ. РџРѕ РґРµС„РѕР»С‚Сѓ Сѓ postgres - read_committed)
+                    // РїР°СЂР°РјРµС‚СЂ readonly РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РѕРїС‚РёРјРёР·Р°С†РёРё (РµСЃР»Рё РґР°РЅРЅС‹Рµ С‚РѕР»СЊРєРѕ С‡РёС‚Р°СЋС‚СЃСЏ РёР· Р‘Р” Рё РЅРёРєР°Рє РЅРµ РјРµРЅСЏСЋС‚СЃСЏ)
+                    // timeout - С‚Р°Р№РјР°СѓС‚ РґР»СЏ С‚СЂР°РЅР·Р°РєС†РёРё
     public Optional<CompanyReadDto> findById(Integer id) {
         return companyRepository.findById(1).map(entity -> {
             eventPublisher.publishEvent(new EntityEvent(entity, "READ"));

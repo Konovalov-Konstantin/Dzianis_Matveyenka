@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 @Data
-@ToString(exclude = "userChats")        //  для исключения StackOverflowError при работе с сущностями, которые используют двустороннюю ассоциацию.
+@ToString(exclude = "userChats")    // С‡С‚РѕР± РїСЂРµРґРѕС‚РІСЂР°С‚РёС‚СЊ Р±РµСЃРєРѕРЅРµС‡РЅСѓСЋ СЂРµРєСѓСЂСЃРёСЋ РІ РјРµС‚РѕРґРµ toString() РїСЂРё РґРІСѓСЃС‚РѕСЂРѕРЅРЅРёС… РѕС‚РЅРѕС€РµРЅРёСЏС… РјРµР¶РґСѓ СЃСѓС‰РЅРѕСЃС‚СЏРјРё (РЅР°РїСЂРёРјРµСЂ, OneToMany Рё ManyToOne С‡С‚РѕР± РЅРµ СѓРїР°СЃС‚СЊ СЃРѕ StackOverflowError
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

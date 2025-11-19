@@ -10,7 +10,7 @@ import java.util.Map;
 // данные тянутся из application.yml по префиксу 'db' (видео_урок_38)
 // также нужна аннотация @ConfigurationPropertiesScan над главным классом (@SpringBootApplication) либо @Component над данным классом
 // Можно внедрить DatabaseProperties как бин в нужное место и геттерами вытаскивать нужные конфиги
-@Value  // включает в себя @Getter @FieldDefaults(makeFinal=true, level=AccessLevel.PRIVATE) @AllArgsConstructor @ToString @EqualsAndHashCode.
+@Value  // включает в себя @Getter @FieldDefaults(makeFinal=true, level=AccessLevel.PRIVATE) @AllArgsConstructor @ToString @EqualsAndHashCode. Для неизменяемых объектов.
 @ConfigurationProperties(prefix = "db") // в параметрах указывается префикс из application.yml
 public class DatabaseProperties {
 
