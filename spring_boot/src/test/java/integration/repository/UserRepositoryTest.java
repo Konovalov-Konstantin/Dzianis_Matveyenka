@@ -53,10 +53,10 @@ class UserRepositoryTest {
 
     @Test
     void findTop3ByBirthDateBeforeTest() {
-        // для динамической сортировки
-        // 1. вариант сортера с хардкодом
+        // РґР»СЏ РґРёРЅР°РјРёС‡РµСЃРєРѕР№ СЃРѕСЂС‚РёСЂРѕРІРєРё
+        // 1. РІР°СЂРёР°РЅС‚ СЃРѕСЂС‚РµСЂР° СЃ С…Р°СЂРґРєРѕРґРѕРј
         // Sort sortByLastNameAndFirstName = Sort.by("lastname").and(Sort.by("firstname"));
-        // 2. безопасный вариант сортера
+        // 2. Р±РµР·РѕРїР°СЃРЅС‹Р№ РІР°СЂРёР°РЅС‚ СЃРѕСЂС‚РµСЂР°
         Sort.TypedSort<User> sortBy = Sort.sort(User.class);
         Sort sortByLastNameAndFirstName = sortBy.by(User::getFirstname).and(sortBy.by(User::getLastname));
 
@@ -81,12 +81,12 @@ class UserRepositoryTest {
         PageRequest pageable = PageRequest.of(1, 2, Sort.by("id"));
         Page<User> userPage = userRepository.findPageBy(pageable);
         userPage.forEach(System.out::println);
-        assertThat(userPage).hasSize(2); // элементы 3 и4
+        assertThat(userPage).hasSize(2); // СЌР»РµРјРµРЅС‚С‹ 3 Рё4
 
-        while (userPage.hasNext()) {   // Page позволяет итерироваться по выборкам из БД
+        while (userPage.hasNext()) {   // Page РїРѕР·РІРѕР»СЏРµС‚ РёС‚РµСЂРёСЂРѕРІР°С‚СЊСЃСЏ РїРѕ РІС‹Р±РѕСЂРєР°Рј РёР· Р‘Р”
             userPage = userRepository.findPageBy(userPage.nextPageable());
             userPage.forEach(System.out::println);
-            assertThat(userPage).hasSize(1);   //  элемент 5
+            assertThat(userPage).hasSize(1);   //  СЌР»РµРјРµРЅС‚ 5
         }
     }
 }

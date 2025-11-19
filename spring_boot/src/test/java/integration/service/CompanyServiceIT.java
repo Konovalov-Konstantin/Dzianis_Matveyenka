@@ -16,15 +16,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest(classes = Application.class)
-@ActiveProfiles("test")   // активируется профиль test и считывается application-test.yml, переопределяя конфиги с теми же ключами, что и в application.yml основного приложения
-@RequiredArgsConstructor    // чтобы не использовать @Autowired над полями
-@TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)   // чтобы не использовать @Autowired над полями (либо можно через параметр в файле spring.properties - урок №44)
-//@ExtendWith(SpringExtension.class)  // SpringExtension предоставляет спринг-контекст
+@ActiveProfiles("test")   // Р°РєС‚РёРІРёСЂСѓРµС‚СЃСЏ РїСЂРѕС„РёР»СЊ test Рё СЃС‡РёС‚С‹РІР°РµС‚СЃСЏ application-test.yml, РїРµСЂРµРѕРїСЂРµРґРµР»СЏСЏ РєРѕРЅС„РёРіРё СЃ С‚РµРјРё Р¶Рµ РєР»СЋС‡Р°РјРё, С‡С‚Рѕ Рё РІ application.yml РѕСЃРЅРѕРІРЅРѕРіРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ
+@RequiredArgsConstructor    // С‡С‚РѕР±С‹ РЅРµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ @Autowired РЅР°Рґ РїРѕР»СЏРјРё
+@TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)   // С‡С‚РѕР±С‹ РЅРµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ @Autowired РЅР°Рґ РїРѕР»СЏРјРё (Р»РёР±Рѕ РјРѕР¶РЅРѕ С‡РµСЂРµР· РїР°СЂР°РјРµС‚СЂ РІ С„Р°Р№Р»Рµ spring.properties - СѓСЂРѕРє в„–44)
+//@ExtendWith(SpringExtension.class)  // SpringExtension РїСЂРµРґРѕСЃС‚Р°РІР»СЏРµС‚ СЃРїСЂРёРЅРі-РєРѕРЅС‚РµРєСЃС‚
 //@ContextConfiguration(
-//        classes = Application.class,        // указываем какой конкретно контекст нужно использовать в тесте
-//        initializers = ConfigDataApplicationContextInitializer.class    // сканирует .yml файлы с конфигами
+//        classes = Application.class,        // СѓРєР°Р·С‹РІР°РµРј РєР°РєРѕР№ РєРѕРЅРєСЂРµС‚РЅРѕ РєРѕРЅС‚РµРєСЃС‚ РЅСѓР¶РЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РІ С‚РµСЃС‚Рµ
+//        initializers = ConfigDataApplicationContextInitializer.class    // СЃРєР°РЅРёСЂСѓРµС‚ .yml С„Р°Р№Р»С‹ СЃ РєРѕРЅС„РёРіР°РјРё
 //)
-//@TestPropertySource("classpath:application-test.yml")  // аннотация работает только с .properties файлами, с .yml не работает (см.initializers в аннотации @ContextConfiguration выше)
+//@TestPropertySource("classpath:application-test.yml")  // Р°РЅРЅРѕС‚Р°С†РёСЏ СЂР°Р±РѕС‚Р°РµС‚ С‚РѕР»СЊРєРѕ СЃ .properties С„Р°Р№Р»Р°РјРё, СЃ .yml РЅРµ СЂР°Р±РѕС‚Р°РµС‚ (СЃРј.initializers РІ Р°РЅРЅРѕС‚Р°С†РёРё @ContextConfiguration РІС‹С€Рµ)
 public class CompanyServiceIT {
 
     private static final Integer COMPANY_ID = 1;
@@ -39,7 +39,7 @@ public class CompanyServiceIT {
         CompanyReadDto expectedResult = new CompanyReadDto(COMPANY_ID);
         actualResult.ifPresent(actual -> assertEquals(expectedResult, actual));
 
-        assertEquals("test", databaseProperties.getUsername());     // т.к. активирован профиль 'test' @ActiveProfiles("test") - username должен тянуться из application-test.yml
+        assertEquals("test", databaseProperties.getUsername());     // С‚.Рє. Р°РєС‚РёРІРёСЂРѕРІР°РЅ РїСЂРѕС„РёР»СЊ 'test' @ActiveProfiles("test") - username РґРѕР»Р¶РµРЅ С‚СЏРЅСѓС‚СЊСЃСЏ РёР· application-test.yml
         assertEquals("test", databaseProperties.getPassword());
     }
 
