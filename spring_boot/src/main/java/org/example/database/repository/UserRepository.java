@@ -51,6 +51,7 @@ public interface UserRepository extends
     // Есть данные об общем кол-ве страниц (см тест findPageByTest)
     Page<User> findPageBy(Pageable pageable);
 
+    /** querydsl */
     @Override
     Iterable<User> findAll(Predicate predicate);
 }

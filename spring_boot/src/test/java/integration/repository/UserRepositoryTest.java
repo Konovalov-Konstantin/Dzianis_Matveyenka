@@ -7,6 +7,7 @@ import org.example.database.entity.QUser;
 import org.example.database.entity.Role;
 import org.example.database.entity.User;
 import org.example.database.repository.UserRepository;
+import org.example.dto.UserDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
@@ -92,6 +93,8 @@ class UserRepositoryTest {
         }
     }
 
+
+    /** querydsl */
     @Test
     void findAllByFilterTest() {
         List<User> users = userRepository.findAllByFilter("t","v",LocalDate.now());
@@ -108,4 +111,12 @@ class UserRepositoryTest {
         Iterable<User> users = userRepository.findAll(predicate);
         assertThat(users).hasSize(2);
     }
+
+    /**  jdbctemplate  */
+    @Test
+    void findAllByCompanyAndRoleTest() {
+        List<UserDto> users = userRepository.findAllByCompanyAndRole(1, Role.USER);
+        assertThat(users).hasSize(1);
+    }
+
 }
