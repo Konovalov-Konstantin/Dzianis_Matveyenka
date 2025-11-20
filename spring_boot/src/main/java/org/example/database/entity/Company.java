@@ -1,6 +1,6 @@
 package org.example.database.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 import java.util.HashMap;

@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.2.5'   // версия spring-boot
+    id 'org.springframework.boot' version '2.6.2'   // версия spring-boot
     id 'io.spring.dependency-management' version '1.1.4'    // автоматически устраняет несовместимость версий библиотек
     id 'io.freefair.lombok' version '8.6'
 }

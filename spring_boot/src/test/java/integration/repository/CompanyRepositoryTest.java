@@ -1,6 +1,6 @@
 package integration.repository;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.example.Application;
 import org.example.database.entity.Company;

@@ -2,7 +2,7 @@ package org.example.config;
 
 import lombok.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.bind.ConstructorBinding;
+import org.springframework.boot.context.properties.ConstructorBinding;
 
 import java.util.List;
 import java.util.Map;
@@ -23,7 +23,8 @@ public class DatabaseProperties {
     List<PoolProperties> pools;
     Map<String, Object> properties;
 
-    @ConstructorBinding // указывает, что этот конструктор использовать для маппинга свойств конфигурации с помощью аргументов конструктора
+    @ConstructorBinding
+    // указывает, что этот конструктор использовать для маппинга свойств конфигурации с помощью аргументов конструктора
     public DatabaseProperties(String username, String password, String driver, String url, String hosts,
                               PoolProperties pool, List<PoolProperties> pools, Map<String, Object> properties) {
         this.username = username;

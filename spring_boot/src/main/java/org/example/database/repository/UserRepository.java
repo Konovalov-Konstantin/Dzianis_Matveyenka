@@ -1,6 +1,5 @@
 package org.example.database.repository;
 
-import jakarta.persistence.LockModeType;
 import org.example.database.entity.Role;
 import org.example.database.entity.User;
 import org.springframework.data.domain.Page;
@@ -11,7 +10,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
+import javax.persistence.LockModeType;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -22,16 +23,16 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     // пример с HQL
     @Query("select u from User u where u.firstname like :firstName and u.lastname like :lastName")
-    List<User> findAllBy(String firstName, String lastName);
+    List<User> findAllBy(@Param("firstName") String firstName, @Param("lastName") String lastName);
 
     // пример с SQL
     @Query(value = "SELECT u.* FROM users u WHERE u.username = :username", nativeQuery = true)
-    List<User> findAllByUserName(String username);
+    List<User> findAllByUserName(@Param("username") String username);
 
     @Modifying(clearAutomatically = true)  // без этой аннотации при изменении данных в БД упадем с ошибкой
                                            // clearAutomatically - удалет устаревшие данные из кэша после обновлении данных в БД
     @Query("update User u set u.role = :role WHERE u.id in (:ids)")
-    int updateRole(Role role, Long... ids);
+    int updateRole(@Param("role") Role role, @Param("ids") Long... ids);
 
     // динамическа сортировка (см. тест findTop3ByBirthDateBeforeTest)
     @Lock(LockModeType.OPTIMISTIC)  // уровень блокировки данных. Для обнаружения конфликтов в entity используется доп.поле с аннотацией @Version
