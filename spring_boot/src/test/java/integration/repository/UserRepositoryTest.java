@@ -1,7 +1,9 @@
 package integration.repository;
 
+import com.querydsl.core.types.Predicate;
 import lombok.RequiredArgsConstructor;
 import org.example.Application;
+import org.example.database.entity.QUser;
 import org.example.database.entity.Role;
 import org.example.database.entity.User;
 import org.example.database.repository.UserRepository;
@@ -88,5 +90,22 @@ class UserRepositoryTest {
             userPage.forEach(System.out::println);
             assertThat(userPage).hasSize(1);   //  элемент 5
         }
+    }
+
+    @Test
+    void findAllByFilterTest() {
+        List<User> users = userRepository.findAllByFilter("t","v",LocalDate.now());
+        assertThat(users).hasSize(2);
+    }
+
+    @Test
+    void findAllQueryDSLTest() {
+        QUser user = QUser.user;
+        Predicate predicate = user.firstname.containsIgnoreCase("t")
+                .and(user.lastname.containsIgnoreCase("v"))
+                .and(user.birthDate.before(LocalDate.now()));
+
+        Iterable<User> users = userRepository.findAll(predicate);
+        assertThat(users).hasSize(2);
     }
 }

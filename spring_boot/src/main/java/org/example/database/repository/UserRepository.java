@@ -1,5 +1,6 @@
 package org.example.database.repository;
 
+import com.querydsl.core.types.Predicate;
 import org.example.database.entity.Role;
 import org.example.database.entity.User;
 import org.springframework.data.domain.Page;
@@ -10,13 +11,18 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.query.Param;
 
 import javax.persistence.LockModeType;
 import java.time.LocalDate;
 import java.util.List;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends
+        JpaRepository<User, Long>,
+        FilterUserRepository,
+        QuerydslPredicateExecutor<User>
+{
 
     // примеры методов с ручным составлением SQL-запросов
     // если параметр nativeQuery в аннотации @Query false - тогда запрос пишется в HQL, если в true - тогдв в SQL
@@ -44,4 +50,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // Page - подсписок списка объектов. Можно установить лимит на объектов на странице, номер страницы.
     // Есть данные об общем кол-ве страниц (см тест findPageByTest)
     Page<User> findPageBy(Pageable pageable);
+
+    @Override
+    Iterable<User> findAll(Predicate predicate);
 }
