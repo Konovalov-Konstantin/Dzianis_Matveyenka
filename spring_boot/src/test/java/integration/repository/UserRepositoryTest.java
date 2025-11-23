@@ -3,6 +3,7 @@ package integration.repository;
 import com.querydsl.core.types.Predicate;
 import lombok.RequiredArgsConstructor;
 import org.example.Application;
+import org.example.database.entity.Company;
 import org.example.database.entity.QUser;
 import org.example.database.entity.Role;
 import org.example.database.entity.User;
@@ -119,4 +120,38 @@ class UserRepositoryTest {
         assertThat(users).hasSize(1);
     }
 
+    /** batch - запрос */
+    @Test
+    void updateCompanyAndRoleBatchTest() {
+        List<User> users = List.of(
+                User.builder()
+                        .id(1L)
+                        .company(Company.builder().id(3).build())
+                        .role(Role.USER)
+                        .build(),
+                User.builder()
+                        .id(2L)
+                        .company(Company.builder().id(3).build())
+                        .role(Role.USER)
+                        .build(),
+                User.builder()
+                        .id(3L)
+                        .company(Company.builder().id(3).build())
+                        .role(Role.USER)
+                        .build()
+        );
+
+        userRepository.updateCompanyAndRole(users); // все users обновятся одним запросом к БД
+
+        QUser user = QUser.user;
+        Predicate predicate = user.id.lt(4);
+        Iterable<User> usersWithIdBefore4 = userRepository.findAll(predicate);
+
+        usersWithIdBefore4.forEach(
+                u -> {
+                    assertThat(u.getCompany().getId()).isEqualTo(3);
+                    assertThat(u.getRole()).isEqualTo(Role.USER);
+                }
+        );
+    }
 }

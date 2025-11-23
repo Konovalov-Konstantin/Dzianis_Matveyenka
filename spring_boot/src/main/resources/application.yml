@@ -16,6 +16,8 @@ spring:
         show_sql: true
         format_sql: true
         hbm2ddl.auto: validate
+        batch_size: 50  # для update, delete, insert запросов, чтоб одним запросом в БД уходили указанное кол-во записей
+        fetch_size: 10  # для select запросов, чтоб из общего результата select-запроса в приложение подтягивались из БД куски указанного размера
 
 # настройка уровня для вывода логирования (WARN и выше)
 logging:

@@ -13,6 +13,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.persistence.EntityManager;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 public class FilterUserRepositoryImpl implements FilterUserRepository {
@@ -39,7 +40,7 @@ public class FilterUserRepositoryImpl implements FilterUserRepository {
     /**  jdbctemplate  */
     @Override
     public List<UserDto> findAllByCompanyAndRole(Integer companyId, Role role) {
-        // чтоб ide подсказывала при составлении sql - alt+insert - inject language and reference - postgresql
+        // чтоб ide подсказывала при составлении sql - alt+enter - inject language or reference - postgresql
         return jdbcTemplate.query(
                 "SELECT firstname, lastname, birth_date FROM users WHERE company_id = ? AND role = ?",
                 (rs, rowNum) -> new UserDto(
@@ -48,5 +49,21 @@ public class FilterUserRepositoryImpl implements FilterUserRepository {
                         rs.getDate("birth_date").toLocalDate()),
                 companyId, role.name()
         );
+    }
+
+    /** batch - запрос */
+    @Override
+    public void updateCompanyAndRole(List<User> users) {
+        List<Object[]> args = users.stream()
+                .map(user -> new Object[]{
+                        user.getCompany().getId(),
+                        user.getRole().name(),
+                        user.getId()}
+                ).toList();
+
+        jdbcTemplate.batchUpdate(
+                "UPDATE users SET company_id = ?, role = ? WHERE id = ?",
+                      args  // вторым аргументом передается массив размером 3 т.к. 3 вопроса в sql-запросе
+                );
     }
 }
