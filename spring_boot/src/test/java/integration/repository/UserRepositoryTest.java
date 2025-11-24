@@ -1,6 +1,7 @@
 package integration.repository;
 
 import com.querydsl.core.types.Predicate;
+import integration.IntegrationTestBase;
 import lombok.RequiredArgsConstructor;
 import org.example.Application;
 import org.example.database.entity.Company;
@@ -32,8 +33,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @RequiredArgsConstructor
 @TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
 @Transactional
-@Sql({"classpath:sql/data.sql"})  // накатывает даннные из скрипта в тестовую БД
-class UserRepositoryTest {
+class UserRepositoryTest extends IntegrationTestBase {
 
     private final UserRepository userRepository;
 

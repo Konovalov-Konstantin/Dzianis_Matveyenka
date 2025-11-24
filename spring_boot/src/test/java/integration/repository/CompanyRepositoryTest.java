@@ -1,6 +1,8 @@
 package integration.repository;
 
 import javax.persistence.EntityManager;
+
+import integration.IntegrationTestBase;
 import lombok.RequiredArgsConstructor;
 import org.example.Application;
 import org.example.database.entity.Company;
@@ -21,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @RequiredArgsConstructor
 @TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
 @Transactional
-class CompanyRepositoryTest {
+class CompanyRepositoryTest extends IntegrationTestBase {
 
     private final EntityManager entityManager;
     private final CompanyRepository companyRepository;
