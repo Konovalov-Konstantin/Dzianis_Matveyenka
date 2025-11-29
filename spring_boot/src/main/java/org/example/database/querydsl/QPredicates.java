@@ -26,11 +26,11 @@ public class QPredicates {
     }
 
     public Predicate buildAndPredicate() {
-        return ExpressionUtils.allOf(predicates);   // РІСЃРµ РїСЂРµРґРёРєР°С‚С‹ СЃРѕРµРґРёРЅСЏСЋС‚СЃСЏ С‡РµСЂРµР· Р»РѕРіРёС‡РµСЃРєРѕРµ "Р"
+        return ExpressionUtils.allOf(predicates);   // все предикаты соединяются через логическое "И"
     }
 
     public Predicate buildOrPredicate() {
-        return ExpressionUtils.anyOf(predicates);   // РІСЃРµ РїСЂРµРґРёРєР°С‚С‹ СЃРѕРµРґРёРЅСЏСЋС‚СЃСЏ С‡РµСЂРµР· Р»РѕРіРёС‡РµСЃРєРѕРµ "РР›Р"
+        return ExpressionUtils.anyOf(predicates);   // все предикаты соединяются через логическое "ИЛИ"
     }
 
 }

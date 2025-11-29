@@ -1,5 +1,6 @@
 package integration.service;
 
+import integration.IntegrationTestBase;
 import lombok.RequiredArgsConstructor;
 import org.example.Application;
 import org.example.config.DatabaseProperties;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestConstructor;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -25,7 +27,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 //        initializers = ConfigDataApplicationContextInitializer.class    // сканирует .yml файлы с конфигами
 //)
 //@TestPropertySource("classpath:application-test.yml")  // аннотация работает только с .properties файлами, с .yml не работает (см.initializers в аннотации @ContextConfiguration выше)
-public class CompanyServiceIT {
+@Transactional
+public class CompanyServiceIT extends IntegrationTestBase {
 
     private static final Integer COMPANY_ID = 1;
     private final CompanyService companyService;
