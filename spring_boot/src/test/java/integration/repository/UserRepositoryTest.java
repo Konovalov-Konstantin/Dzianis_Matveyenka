@@ -9,17 +9,14 @@ import org.example.database.entity.QUser;
 import org.example.database.entity.Role;
 import org.example.database.entity.User;
 import org.example.database.repository.UserRepository;
-import org.example.dto.UserDto;
+import org.example.dto.UserReadDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestConstructor;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.jdbc.SqlConfig;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
@@ -120,7 +117,7 @@ class UserRepositoryTest extends IntegrationTestBase {
     /**  jdbctemplate  */
     @Test
     void findAllByCompanyAndRoleTest() {
-        List<UserDto> users = userRepository.findAllByCompanyAndRole(1, Role.USER);
+        List<UserReadDto> users = userRepository.findAllByCompanyAndRole(1, Role.USER);
         assertThat(users).hasSize(1);
     }
 

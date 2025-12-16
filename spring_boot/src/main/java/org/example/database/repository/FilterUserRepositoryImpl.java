@@ -7,13 +7,13 @@ import org.example.database.entity.QUser;
 import org.example.database.entity.Role;
 import org.example.database.entity.User;
 import org.example.database.querydsl.QPredicates;
-import org.example.dto.UserDto;
+import org.example.dto.CompanyReadDto;
+import org.example.dto.UserReadDto;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.persistence.EntityManager;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 public class FilterUserRepositoryImpl implements FilterUserRepository {
@@ -39,14 +39,17 @@ public class FilterUserRepositoryImpl implements FilterUserRepository {
 
     /**  jdbctemplate  */
     @Override
-    public List<UserDto> findAllByCompanyAndRole(Integer companyId, Role role) {
+    public List<UserReadDto> findAllByCompanyAndRole(Integer companyId, Role role) {
         // чтоб ide подсказывала при составлении sql - alt+enter - inject language or reference - postgresql
         return jdbcTemplate.query(
                 "SELECT firstname, lastname, birth_date FROM users WHERE company_id = ? AND role = ?",
-                (rs, rowNum) -> new UserDto(
+                (rs, rowNum) -> new UserReadDto(
+                        rs.getLong("id"),
                         rs.getString("firstname"),
                         rs.getString("lastname"),
-                        rs.getDate("birth_date").toLocalDate()),
+                        rs.getDate("birth_date").toLocalDate(),
+                        rs.getObject("company", CompanyReadDto.class)
+                ),
                 companyId, role.name()
         );
     }

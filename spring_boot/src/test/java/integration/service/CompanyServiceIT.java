@@ -39,7 +39,7 @@ public class CompanyServiceIT extends IntegrationTestBase {
         Optional<CompanyReadDto> actualResult = companyService.findById(COMPANY_ID);
 
         assertTrue(actualResult.isPresent());
-        CompanyReadDto expectedResult = new CompanyReadDto(COMPANY_ID);
+        CompanyReadDto expectedResult = new CompanyReadDto(COMPANY_ID, null);
         actualResult.ifPresent(actual -> assertEquals(expectedResult, actual));
 
         assertEquals("test", databaseProperties.getUsername());     // т.к. активирован профиль 'test' @ActiveProfiles("test") - username должен тянуться из application-test.yml
