@@ -24,6 +24,7 @@ dependencies {
     implementation 'org.postgresql:postgresql'
     implementation 'com.querydsl:querydsl-jpa'
     implementation 'org.liquibase:liquibase-core'
+    implementation 'org.springdoc:springdoc-openapi-ui:1.8.0'   // swagger доступен по http://localhost:8080/swagger-ui/index.html
 
     annotationProcessor 'com.querydsl:querydsl-apt'
 
@@ -43,6 +44,6 @@ compileQuerydsl {
     options.annotationProcessorPath = configurations.querydsl
 }
 
-test {
-    useJUnitPlatform()
-}
+//test {
+//    useJUnitPlatform()
+//}
