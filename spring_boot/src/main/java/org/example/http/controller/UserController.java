@@ -11,43 +11,40 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
 
     private final UserService userService;
 
     @GetMapping
-    public List<UserReadDto> findAll() {
+    public List<UserReadDto> findAll() {    // желательно добавить пагинацию т.к. записей м.б. много
         return userService.findAll();
     }
 
     @GetMapping("/{id}")
-    public String findById(@PathVariable("id") Long id) {
+    public UserReadDto findById(@PathVariable("id") Long id) {
         return userService.findById(id)
-                .map(user -> "user/user")
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED) // возвращаем 201-й статус
-    public String create(@RequestBody UserCreateEditDto userDto) {
-        UserReadDto userReadDto = userService.create(userDto);
-        return "redirect:/users/" + userReadDto.getId();
+    public UserReadDto create(@RequestBody UserCreateEditDto userDto) {
+        return userService.create(userDto);
     }
 
     @PutMapping("/{id}")
-    public String update(@PathVariable("id") Long id, @RequestBody UserCreateEditDto userCreateEditDto) {
+    public UserReadDto update(@PathVariable("id") Long id, @RequestBody UserCreateEditDto userCreateEditDto) {
         return userService.update(id, userCreateEditDto)
-                .map(user -> "redirect:/users/{id}")
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable("id") Long id) {
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") Long id) {
         if(!userService.delete(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
-        return "redirect:/users";
     }
 }
