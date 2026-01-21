@@ -30,7 +30,7 @@ public class LoggingBeanPostProcessor implements BeanPostProcessor {
 
         if (beanClass != null) {
             // создание Proxy и подмена бинов нужно делать в методе postProcessAfterInitialization (не в postProcessBeforeInitialization). Иначе будет исключение.
-            // в примере создается динамический proxy (через интерфейсы) при помощи JDK proxy. Лучше создавать proxy через настедование (cjlib, Byte Buddy)
+            // в примере создается динамический proxy (через интерфейсы) при помощи JDK proxy. Лучше создавать proxy через настедование (cglib, Byte Buddy)
             return Proxy.newProxyInstance(beanClass.getClassLoader(), beanClass.getInterfaces(), new InvocationHandler() {
                 @Override
                 public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
