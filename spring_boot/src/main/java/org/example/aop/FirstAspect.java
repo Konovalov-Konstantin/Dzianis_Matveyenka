@@ -11,6 +11,13 @@ import org.springframework.stereotype.Component;
 @Log4j2
 public class FirstAspect {
 
+    /** best practices - использовать в advise-ах pointcut-ы в парах (сначала @within / within (т.к. они работают
+     * быстрее всех), затем например execution.
+     * Вместо @Around лучше использовать точечные (@Before, @AfterReturning, @AfterThrowing, @After).
+     * Создавать отдельные классы аспектов для различной логики. Можно управлять порядком вызовом таких классов аспектов
+     * с помощью аннотации @Order(1), @Order(2)
+     */
+
     /** @within - аннотации над классами */
     @Pointcut("@within(org.springframework.stereotype.Controller)")  // проверяет аннотацию над классом
     public void isControllerLayer() {}
@@ -77,7 +84,7 @@ public class FirstAspect {
         log.info("After log from aop-advice in class {}", service);
     }
 
-    @Around("anyFindByIsServiceMethod() && args(id) && target(service)")    // может заменить все вышеуказанные (@Before, @AfterReturning, @AfterThrowing, @After)
+    @Around("anyFindByIsServiceMethod() && args(id) && target(service)")    // может заменить все вышеуказанные (@Before, @AfterReturning, @AfterThrowing, @After), но лучше использовать точечные
     public Object addLoggingAround(ProceedingJoinPoint joinPoint, Object id, Object service) throws Throwable {
         log.info("AROUND Before log from aop-advice addLogging in class {} with id {}", service, id);
         try {
